@@ -18,9 +18,7 @@ import java.util.Date;
 
 public class EarthquakeAdapter extends ArrayAdapter<EarthquakeClass> {
 
-    private static final String LOG_TAG = EarthquakeAdapter.class.getSimpleName();
     private static final String LOCATION_SEPARATOR = " of ";
-    int magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude1);
 
     public EarthquakeAdapter(Context context, ArrayList<EarthquakeClass> earthquakes) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
