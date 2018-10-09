@@ -15,21 +15,23 @@
  */
 package com.example.android.quakereport;
 
-import android.app.LoaderManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.content.AsyncTaskLoader;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Loader;
 
-public class EarthquakeActivity extends AppCompatActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<List<EarthquakeClass>> {
+public class EarthquakeActivity extends AppCompatActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<List<EarthquakeClass>>{
 
     public static final String LOG_TAG = EarthquakeActivity.class.getName();
 
@@ -86,11 +88,11 @@ public class EarthquakeActivity extends AppCompatActivity implements android.sup
 
 
         // Get a reference to the LoaderManager, in order to interact with loaders.
-        LoaderManager loaderManager = getLoaderManager();
+        android.app.LoaderManager loaderManager = getLoaderManager();
         // Initialize the loader. Pass in the int ID constant defined above and pass in null for
         // the bundle. Pass in this activity for the LoaderCallbacks parameter (which is valid
         // because this activity implements the LoaderCallbacks interface).
-        loaderManager.initLoader(EARTHQUAKE_LOADER_ID, null, this);
+        getSupportLoaderManager().initLoader(EARTHQUAKE_LOADER_ID, null, this);
 
     }
 
